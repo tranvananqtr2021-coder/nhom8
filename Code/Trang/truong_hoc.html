@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trường THPT Bến Hải</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #004080;
+            --accent: #fbb03b;
+            --bg-gray: #f4f7f6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+        body { background-color: var(--bg-gray); color: #333; }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--primary);
+            padding: 0 10%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            border-bottom: 4px solid var(--accent);
+            position: sticky; top: 0; z-index: 100;
+        }
+        .back-btn {
+            color: white; text-decoration: none; font-weight: 700;
+            display: flex; align-items: center; gap: 10px; font-size: 14px;
+        }
+        .back-btn:hover { color: var(--accent); }
+
+        /* --- BANNER ẢNH (Đã sửa) --- */
+        .school-header {
+            /* BẠN THAY ĐƯỜNG DẪN ẢNH VÀO TRONG DẤU NHÁY ĐƠN BÊN DƯỚI */
+            background: linear-gradient(rgba(0, 45, 90, 0.7), rgba(0, 45, 90, 0.7)), url('anh_truong.jpg');
+            
+            background-size: cover;       /* Ảnh tự co giãn phủ kín */
+            background-position: center;  /* Căn giữa ảnh */
+            color: white;
+            padding: 100px 20px;          /* Tăng chiều cao để nhìn thấy ảnh rõ hơn */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .school-header h1 {
+            font-size: 45px; /* Chữ to hơn cho nổi trên nền ảnh */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Đổ bóng chữ cho dễ đọc */
+        }
+
+        .school-meta {
+            font-size: 18px;
+            background: rgba(251, 176, 59, 0.9); /* Nền màu vàng nổi bật */
+            color: #004080;
+            padding: 10px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        /* Nội dung & Link (Giữ nguyên) */
+        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .content-box {
+            background: white; border-radius: 10px; padding: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 30px;
+            border-top: 5px solid var(--accent);
+        }
+        .box-title {
+            font-size: 20px; color: var(--primary); text-transform: uppercase;
+            font-weight: 700; margin-bottom: 20px; border-bottom: 2px solid #eee;
+            padding-bottom: 10px; display: flex; align-items: center; gap: 10px;
+        }
+        .text-content { line-height: 1.8; color: #555; text-align: justify; }
+        
+        .link-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .link-btn {
+            display: flex; align-items: center; justify-content: center;
+            padding: 20px; border-radius: 8px; text-decoration: none;
+            color: white; font-weight: bold; font-size: 16px; gap: 15px;
+            transition: 0.3s;
+        }
+        .link-btn:hover { transform: translateY(-5px); }
+        .btn-web { background: linear-gradient(45deg, #004080, #0066cc); }
+        .btn-fb { background: linear-gradient(45deg, #1877f2, #3b5998); }
+        .link-icon { font-size: 28px; }
+
+        @media (max-width: 600px) {
+            .link-grid { grid-template-columns: 1fr; }
+            .school-header h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="back-btn"><i class="fas fa-chevron-left"></i> QUAY LẠI TRANG CHỦ</a>
+    </nav>
+
+    <div class="school-header">
+        <h1>Trường THPT Bến Hải</h1>
+        <div class="school-meta">
+            <i class="fas fa-calendar-alt"></i> Thành lập năm 2016
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content-box">
+            <h2 class="box-title"><i class="fas fa-info-circle"></i> Giới thiệu chung</h2>
+            <div class="text-content">
+                <p>Trường THPT Bến Hải tự hào là một trong những ngôi trường có chất lượng giáo dục phát triển tại tỉnh Quảng Trị. Được thành lập vào năm <strong>2016</strong>, nhà trường đã không ngừng nỗ lực, phấn đấu trong công tác dạy và học.</p>
+                <br>
+                <p>Với sứ mệnh đào tạo thế hệ trẻ vừa có đức vừa có tài, trường THPT Bến Hải luôn chú trọng đổi mới phương pháp giảng dạy, đầu tư cơ sở vật chất và tạo môi trường học tập năng động, sáng tạo cho học sinh.</p>
+            </div>
+        </div>
+
+        <div class="content-box">
+            <h2 class="box-title"><i class="fas fa-link"></i> Cổng thông tin trực tuyến</h2>
+            <div class="link-grid">
+                <a href="https://thptbenhai.quangtri.edu.vn/" target="_blank" class="link-btn btn-web">
+                    <i class="fas fa-globe link-icon"></i>
+                    <div>
+                        <div style="font-size: 12px; opacity: 0.8; font-weight: normal;">Truy cập</div>
+                        Website Nhà Trường
+                    </div>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100083304639160" target="_blank" class="link-btn btn-fb">
+                    <i class="fab fa-facebook-square link-icon"></i>
+                    <div>
+                        <div style="font-size: 12px; opacity: 0.8; font-weight: normal;">Theo dõi</div>
+                        Fanpage Facebook
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

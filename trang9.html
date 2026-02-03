@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhóm 8 Pro Max - Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: #f4f7f6; overflow-x: hidden; }
+
+        /* Navbar Sticky */
+        .navbar { 
+            background-color: #004080; padding: 0 10%; 
+            display: flex; justify-content: space-between; align-items: center; 
+            border-bottom: 4px solid #fbb03b;
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .menu { display: flex; list-style: none; }
+        .menu li a { color: white; text-decoration: none; padding: 20px 20px; display: block; text-transform: uppercase; font-weight: bold; transition: 0.3s; }
+        .menu li a:hover { background: rgba(255,255,255,0.1); color: #fbb03b; }
+        
+        /* Banner */
+        .banner { 
+            background: linear-gradient(135deg, #fbb03b 35%, #004080 35%); 
+            height: 350px; display: flex; align-items: center; justify-content: center; color: white; 
+        }
+        .banner-text h1 { font-size: 50px; text-transform: uppercase; }
+        .banner-text span { color: #fbb03b; font-size: 70px; font-weight: 900; }
+
+        /* Section Thành viên */
+        .section { padding: 80px 10% 50px; text-align: center; }
+        .member-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; }
+        
+        .member-card { 
+            background: white; border-radius: 15px; padding: 20px; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1); cursor: pointer; transition: 0.3s; border-top: 5px solid #004080; 
+        }
+        .member-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
+        
+        .member-img { width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 15px; border: 3px solid #fbb03b; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #eee; }
+        .member-img img { width: 100%; height: 100%; object-fit: cover; }
+        .member-card h3 { color: #004080; font-size: 18px; text-transform: uppercase; margin-bottom: 5px; }
+        .member-card p { color: #666; font-size: 14px; font-weight: 500; } /* Đã xóa chức vụ */
+
+        /* MODAL */
+        .modal { 
+            display: none; position: fixed; z-index: 9999; 
+            left: 0; top: 0; width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.9);
+            justify-content: center; align-items: center; 
+        }
+        .modal-content { 
+            background: white; width: 95%; max-width: 1200px; height: 95vh; 
+            border-radius: 10px; position: relative; overflow: hidden; 
+        }
+        .close-btn { 
+            position: absolute; right: 20px; top: 10px; font-size: 40px; 
+            cursor: pointer; color: #333; z-index: 10001; font-weight: bold; 
+        }
+        iframe { width: 100%; height: 100%; border: none; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul class="menu">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="#thanh-vien">Giới thiệu</a></li>
+            <li><a href="truong_hoc.html">Trường học</a></li>
+            <li><a href="lop_hoc.html">Lớp học</a></li>
+        </ul>
+        <div style="color: white; padding: 20px; cursor: pointer;"><i class="fas fa-search"></i></div>
+    </nav>
+
+    <div class="banner">
+        <div class="banner-text"><h1>NHÓM 8</h1><span>PRO MAX</span></div>
+    </div>
+
+    <section class="section" id="thanh-vien">
+        <h2 style="margin-bottom: 40px; color: #003366;">THÀNH VIÊN NHÓM</h2>
+        <div class="member-grid">
+            
+            <div class="member-card" onclick="openCV('trannam.html')">
+                <div class="member-img"><img src="trannam.jpg" alt="Nam"></div>
+                <h3>Trần Văn Nam</h3>
+                <p>Thành viên Nhóm 8</p>
+            </div>
+
+            <div class="member-card" onclick="openCV('dang.html')">
+                <div class="member-img"><img src="dangavatar.jpg" alt="Đăng"></div>
+                <h3>Hải Đăng</h3>
+                <p>Thành viên Nhóm 8</p>
+            </div>
+
+            <div class="member-card" onclick="openCV('duc.html')">
+                <div class="member-img"><img src="ducavtar.jpg" alt="Đức"></div>
+                <h3>Ngọc Đức</h3>
+                <p>Thành viên Nhóm 8</p>
+            </div>
+
+            <div class="member-card" onclick="openCV('hieu.html')">
+                <div class="member-img"><img src="hieu.jpg" alt="Hiếu"></div>
+                <h3>Thanh Hiếu</h3>
+                <p>Thành viên Nhóm 8</p>
+            </div>
+			 
+			             <div class="member-card" onclick="openCV('nam.html')">
+                <div class="member-img"><img src="namavtar.jpg" alt="Nguyễn Bảo nam"></div>
+                <h3>Nguyễn Bảo Nam</h3>
+                <p>Thành viên Nhóm 8</p>
+            </div>
+
+            
+
+           
+
+           
+
+        </div>
+    </section>
+
+    <div id="cvModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeCV()">&times;</span>
+            <iframe id="cvFrame" src=""></iframe>
+        </div>
+    </div>
+
+    <script>
+        function openCV(fileName) {
+            document.getElementById('cvFrame').src = fileName;
+            document.getElementById('cvModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeCV() {
+            document.getElementById('cvModal').style.display = 'none';
+            document.getElementById('cvFrame').src = '';
+            document.body.style.overflow = 'auto';
+        }
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('cvModal')) closeCV();
+        }
+    </script>
+</body>
+</html>
